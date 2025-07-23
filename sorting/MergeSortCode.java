@@ -1,12 +1,11 @@
 import java.util.Scanner;
 
 public class MergeSortCode{
-    static int[] b;
+    static int[] b; //Initialized Array b globally so that every class can access it.
     public static void main(String[] args){
         Scanner scanner = new Scanner(System.in);
         int[] a;
         
-
         System.out.println("Enter the number of elements in an Array:");
         int n = scanner.nextInt();
         
