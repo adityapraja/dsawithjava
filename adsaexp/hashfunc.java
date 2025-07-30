@@ -2,8 +2,9 @@ import java.util.Scanner;
 
 public class hashfunc{
     public static void main(String[] args){
-        Scanner sc = new Scanner(System.in);
-        String str= sc.nextLine();
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter the string:");
+        String str= scanner.nextLine();
         int n= str.length();
         int s =0;
         for(int i=0;i<n;i++){
@@ -18,9 +19,11 @@ public class hashfunc{
     }
 
     public static void hashfunction(int s,String str){
-        
-        int j=s%10;
-        String[] hash = new String[10];
+        Scanner scanner= new Scanner(System.in);
+        System.out.print("Enter the Size of Hash:");
+        int n= scanner.nextInt();
+        int j=s%n;
+        String[] hash = new String[n];
         hash[j]=str;
         for(int i=0;i<10;i++){
             System.out.println(i + ":"+ hash[i]);
