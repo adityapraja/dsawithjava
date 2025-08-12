@@ -4,27 +4,28 @@ public class MergeSortCode
 {
     static int[] b; //Initialized Array b globally so that every class can access it.
     public static void main(String[] args)
-    {   Scanner scanner = new Scanner(System.in);
+    {   
+        Scanner scanner = new Scanner(System.in);
         int[] a;
         
         System.out.println("Enter the number of elements in an Array:");
-        int n = scanner.nextInt();
+        int n = scanner.nextInt();     //inputs the size of arrays
         
-        a = new int[n];
+        a = new int[n];                //initializations of arrays
         b = new int[n];
 
         System.out.println("Enter the Array to be sorted:");
         for(int i=0;i<n;i++)
         {
-            a[i]=scanner.nextInt();
+            a[i]=scanner.nextInt();                 //inputs the array that need to be sorted
         }
 
-        mergesort(a,0,n-1);
+        mergesort(a,0,n-1);             //calls the mergesortfunction
 
         System.out.println("Sorted Array is:");
         for(int i=0;i<n;i++)
         {
-            System.out.print(a[i]+" ");
+            System.out.print(a[i]+" ");         //prints the sorted array
         }
     }
 
@@ -32,7 +33,7 @@ public class MergeSortCode
     {
         if(lb<ub)
         {
-            int mid=(lb+ub)/2;
+            int mid=(lb+ub)/2;          //recursively divides the array into sub arrays
             mergesort(a,lb,mid);
             mergesort(a,mid+1,ub);
             merge(a,lb,mid,ub);
@@ -48,7 +49,7 @@ public class MergeSortCode
         {
             if(a[i]<=a[j])
             {
-                b[k]=a[i];
+                b[k]=a[i];              //assigns the value to the new temp array from subarrays
                 i++;
                 k++;
             }
@@ -60,7 +61,7 @@ public class MergeSortCode
             }
         }
     
-        if(i>mid)
+        if(i>mid)                   //boundary condition
         {
             while(j<=ub)
             {
@@ -78,7 +79,7 @@ public class MergeSortCode
                 k++;
             }
         }
-        for(k=lb;k<=ub;k++)
+        for(k=lb;k<=ub;k++)         //to assign any remaing elements after boundary conditions
         {
             a[k]=b[k];
         }
