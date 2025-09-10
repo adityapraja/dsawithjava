@@ -5,8 +5,8 @@ public class optimalStorage {
         Scanner sc = new Scanner(System.in);
         
         int n;
-          int MRT=0;
-        System.out.println("Enter the number of Memories:");
+        int MRT=0;
+        System.out.print("Enter the number of Memories:");
         n = sc.nextInt();
         int[] arr = new int[n];
 
@@ -26,7 +26,6 @@ public class optimalStorage {
             }
             MRT=MRT+sum;
         }
-
         System.out.println("MRT:"+MRT);
 
       
