@@ -39,18 +39,28 @@ public class lcs
     
 
     System.out.println("LCS: "+ arr[n][m]);
+    String lcsString = "";
     int a=n,b=m;
+
+    StringBuilder lcsstring = new StringBuilder();
     while (a > 0 && b > 0) {
-        if (string1.charAt(a - 1) == string2.charAt(b - 1)) {
-                System.out.print(string1.charAt(a - 1));
-                a--;
-                b--;
-            } else if (arr[a - 1][b] > arr[a][b - 1]) {
-                a--;
-            } else {
-                b--;
-            }
+        if (string1.charAt(a - 1) == string2.charAt(b - 1)) 
+        {
+            lcsstring.append(string1.charAt(a-1));
+            a--;
+            b--;
+        } 
+        else if (arr[a - 1][b] > arr[a][b - 1]) 
+        {
+            a--;
+        } 
+        else 
+        {
+            b--;
         }
+
+    }
+    System.out.println("LCS String: "+ lcsstring.reverse().toString());
     sc.close();
     }
 }
