@@ -4,6 +4,11 @@
 
 int queue[MAX]; 
 int front = -1, rear = -1;
+void BFS(int graph[MAX][MAX], int vertices, int startVertex); 
+int isEmpty();
+void enqueue(int vertex);
+int dequeue();
+
 
 int main() 
 {
